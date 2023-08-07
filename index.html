@@ -7,7 +7,7 @@
 		<meta property="og:title" content="Screenshot">
 		<meta property="og:url" content="https://srsq.mihoyo.zip/ ">
 		<meta property="og:site_name" content="星铁资源社区">
-		<meta property="og:image" content="img/Honkai Star Rail.png">
+		<meta property="og:video" content="media/og.mp4">
 		<meta property="og:description" content="崩坏：星穹铁道免费资源社区">
 		<meta property="og:type" content="website">
 		<meta name="twitter:card" content="photo">
@@ -16,8 +16,11 @@
 		<meta name="twitter:description" content="崩坏：星穹铁道免费资源社区">
 		<meta name="twitter:image:src" content="img/Honkai Star Rail.png">
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&amp;display=swap" rel="stylesheet">
-		<!-- 百度统计代码 -->
 		<script>
+			window.addEventListener('contextmenu', function(e) {
+				e.preventDefault();
+			});
+
 			var _hmt = _hmt || [];
 			(function() {
 				var hm = document.createElement("script");
@@ -26,7 +29,6 @@
 				s.parentNode.insertBefore(hm, s);
 			})();
 		</script>
-		<!-- 百度统计代码 -->
 		<style type="text/css">
 			p {
 				margin: 0;
@@ -80,7 +82,8 @@
 
 			#decline-button {
 				color: rgb(219, 45, 221);
-				border: 3px solid rgb(219, 45, 221);
+				border: 6px solid rgb(219, 45, 221);
+				background-color: rgb(255, 255, 255);
 			}
 
 			p.overlay-description {
@@ -130,14 +133,15 @@
 
 			.overlay {
 				z-index: 2;
-
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				background-color: #ffefff;
+				background-image: url('media/background.gif');
+				background-size: cover;
 				padding-right: 24px;
 				padding-left: 24px;
 			}
+
 
 			.scare {
 				z-index: 1;
@@ -157,18 +161,18 @@
 	<body>
 		<div id="overlay" class="overlay">
 			<div class="overlay-body">
-				<p class="overlay-title">星铁资源社区</p>
+				<p class="overlay-title">欢迎回家</p>
 				<p class="overlay-description">尊敬的用户，本站永久免费<strong>不收取VIP费用</strong></p>
 				<div class="overlay-buttons-wrapper">
-					<div id="accept-button" class="overlay-button">主站点</div>
-					<div id="decline-button" class="overlay-button">备用站点</div>
+					<div id="accept-button" class="overlay-button">点击进入：高速线路一</div>
+					<div id="decline-button" class="overlay-button">点击进入：高速线路二</div>
 				</div>
 				<br>
 				<a href="#" target="_blank" class="overlay-link">喜欢请分享给您的好友 :)</a>
 			</div>
 		</div>
 		<div class="scare">
-			<video id="video" class="video" src="media/video.mp4" loop=""></video>
+			<video id="video" class="video" src="media/video.mp4" loop="" ></video>
 		</div>
 		<script type="text/javascript">
 			const video = document.getElementById("video");
@@ -190,7 +194,6 @@
 
 			function videoClick(event) {
 				if (event) event.preventDefault();
-				// if not fullscreen
 				const {
 					documentElement
 				} = document;
